@@ -23,19 +23,19 @@ namespace AdminApp.Controllers
             if (alu.Insertar(dni, nom, ape))
             {
                 ViewBag.alerta = "success";
-                ViewBag.res = "Alumno Registrado";
+                ViewBag.res = "El Alumno Ha Sido Registrado";
             }
             else
             {
                 ViewBag.alerta = "danger";
-                ViewBag.res = "Alumno no resgistrado";
+                ViewBag.res = "El Alumno No Ha Sido Registrado";
             }
             return View(alu.listar());
         }
         public ActionResult Editar (int id)
         {
             ViewBag.alerta = "info";
-            ViewBag.res = "Actualizar Alumno";
+            ViewBag.res = "Actualizar Registro De Alumno";
             return View(alu.un_registro(id));
         }
         [HttpPost]
@@ -49,7 +49,7 @@ namespace AdminApp.Controllers
             else
             {
                 ViewBag.alerta = "danger";
-                ViewBag.res = "Ocurrio un Error";
+                ViewBag.res = "Ha Ocurrido un Error";
             }
             return View(alu.un_registro(id));
         }
@@ -62,7 +62,7 @@ namespace AdminApp.Controllers
             else
             {
                 ViewBag.alerta = "danger";
-                ViewBag.res = "El Alumno se Encuentra Registrado en una Sección";
+                ViewBag.res = "El Alumno Se Encuentra Registrado En Una Sección";
                 return View (alu.un_registro(id));
             }
         }
